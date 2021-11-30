@@ -13,11 +13,15 @@
 	<link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 	</head>
+
 	<body>
+
 	<div id="colorlib-page">
+		<h1>Marq</h1>
 		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
 		<aside id="colorlib-aside" role="complementary" class="js-fullheight">
 			<nav id="colorlib-main-menu" role="navigation">
+				
 				<ul>
 					<li class="colorlib-active"><a href="#">Home</a></li>
 					<li><a href="#">Calendar</a></li>
@@ -26,10 +30,15 @@
 					<li><a href="#">Notes</a></li>
 					<li><a href="#">Log Out</a></li>
 				</ul>
+				
 			</nav>
 		</aside> <!-- END COLORLIB-ASIDE -->
+	</div>
 
-		
+	<main className>
+		{% block content %}
+		{% endblock %}
+	</main>
 
 	<script src="{% static 'js/jquery.min.js' %}"></script>
   <script src="{% static 'js/popper.js' %}"></script>
