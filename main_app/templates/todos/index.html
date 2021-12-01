@@ -7,15 +7,14 @@
 
 {% block content %}
 
-<section className='todosContainer'>
+<section class='todosContainer'>
     {% for todo in todos %}
     
-    <div className='todoCard'>
+    <div class='todoCard'>
         <h1>{{todo.title}}</h1>
         <p>{{todo.desc}}</p>
         <h1>{{todo.date}}</h1>
         <h1>{{todo.importance}}</h1>
-
     </div>
     
     {% endfor %}
