@@ -11,7 +11,7 @@
 <form action="" method="POST" class="form">
   {% csrf_token %}
   <a 
-    href="{% url 'todos_delete' todo.id %}" 
+    href="{% url 'todos_index' %}" 
     class="btn secondary"
   >
     Cancel

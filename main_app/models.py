@@ -29,6 +29,6 @@ class Todo(models.Model):
   def __str__(self):
     return self.title
 
-  def get_absolute_url(self):
-    return reverse("todos", kwargs={"todo_id": self.id})
+  # def get_absolute_url(self):
+  #   return reverse("todos_update", kwargs={"todo_id": self.id})
 
