@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/todo-index.css' %}"/>
+{% endblock %}
+
+{% block content %}
+
+<div class="text-center">
+    <a href="/todos/create" class="btn btn-primary mb-3">Add a Todo</a>
+</div>
+
+<section class='row'>
+{% for todo in todos %}
+    <div class='col-sm-6 col-md-4 col-lg-3 mb-3'>
+        
+        <div class="card mx-auto" style="width: 190px;">
+            
+            <div class="card-header d-flex justify-content-between bg-white border-bottom-0">
+                <h5 class="card-title">{{todo.title}}</h5>
+                <span style="height:20px;" class='badge border 
+                    {% if todo.importance == "Important" %} 
+                        badge-danger border-danger border-5
+                    {% endif %}
+                    {% if todo.importance == "General" %} 
+                        badge-primary border-primary
+                    {% endif %}
+                    {% if todo.importance == "Minor" %} 
+                        badge-success border-success
+                    {% endif %}'
+                >{{todo.importance}}</span>
+            </div>
+
+            <div class="card-body">
+            <p class="card-text">{{todo.description}}</p>      
+            </div>
+            <div class="card-footer text-muted bg-white border-top-0">
+                <p>{{todo.date}}</p>
+                <a href="#" class="btn btn-primary btn-sm">Edit</a>
+                <a href="#" class="btn btn-link">Delete</a>
+            </div>
+        </div>
+    </div>
+
+{% endfor %}
+</section>
+
+{% endblock %}
