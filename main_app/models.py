@@ -2,6 +2,7 @@ from django.db import models
 from datetime import date
 from django.urls import reverse
 
+from django.contrib.auth.models import User
 from django.db.models.deletion import CASCADE
 
 
@@ -12,23 +13,22 @@ class Importance_levels(models.Model):
 
 
 class Todo(models.Model):
-  title = models.CharField(max_length=10)
-  description = models.CharField(max_length=400)
-  date = models.DateField('Due Date')
-  IMPORTANCE = [
-    ('Important', 'Important'),
-    ('General', 'General'),
-    ('Minor', 'Minor')
-  ]
-  importance = models.CharField(
-    max_length=20,
-    choices=IMPORTANCE,
-    default=IMPORTANCE[1][0]
-  )
+    title = models.CharField(max_length=10)
+    description = models.CharField(max_length=400)
+    date = models.DateField('Due Date')
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    IMPORTANCE = [
+        ('Important', 'Important'),
+        ('General', 'General'),
+        ('Minor', 'Minor')
+    ]
+    importance = models.CharField(
+        max_length=20,
+        choices=IMPORTANCE,
+        default=IMPORTANCE[1][0]
+    )
 
-  def __str__(self):
-    return self.title
+    def __str__(self):
+      return self.title
 
-  # def get_absolute_url(self):
-  #   return reverse("todos_update", kwargs={"todo_id": self.id})
 

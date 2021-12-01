@@ -23,16 +23,18 @@
 		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
 		<aside id="colorlib-aside" role="complementary" class="js-fullheight">
 			<nav id="colorlib-main-menu" role="navigation">
-				<h1>Marq</h1>
+				<h1>Marq.</h1>
 				<ul>
-					<li class="colorlib-active"><a href="#">Home</a></li>
+				 {% if user.is_authenticated %}
 					<li><a href="#">Calendar</a></li>
-					<li><a href="/todos">To-Do's</a></li>
+					<li><a href="{% url 'todos_index' %}">To-Do's</a></li>
 					<li><a href="#">Events</a></li>
 					<li><a href="#">Notes</a></li>
-					<li><a href="#">Login</a></li>
-					<li><a href="#">Log Out</a></li>
-					
+					<li><a href="{% url 'logout' %}">Log Out</a></li>
+				 {% else %}
+					<li class="colorlib-active"><a href="/">Home</a></li>
+					<li><a href="{% url 'signup' %}">Sign Up</a></li>
+				 {% endif %}	
 				</ul>
 
 			</nav>
