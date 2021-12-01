@@ -18,7 +18,11 @@ class TodoCreate(CreateView):
   fields = ['title', 'description','date', 'importance']
   success_url = '/todos/'
 
-class TodosDelete(DeleteView):
+class TodoUpdate(UpdateView):
+  model = Todo
+  fields = ['description', 'date']
+
+class TodoDelete(DeleteView):
   model = Todo
   success_url = '/todos/'
 
