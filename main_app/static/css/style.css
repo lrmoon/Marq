@@ -8148,7 +8148,7 @@ body {
       -o-transform: translateX(0);
       transform: translateX(0);
       width: 270px;
-      background: #fff;
+      background: cornflowerblue;
       z-index: 999;
       position: fixed; }
     body.offcanvas #colorlib-main, body.offcanvas .colorlib-nav-toggle {
@@ -8216,7 +8216,7 @@ h1, h2, h3, h4, h5,
   right: 0;
   overflow-y: hidden;
   z-index: 1001;
-  background: #fff;
+  background: cornflowerblue;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s; }
@@ -8249,7 +8249,7 @@ h1, h2, h3, h4, h5,
       font-weight: 500;
       line-height: 1.5; }
       #colorlib-aside #colorlib-main-menu ul li a {
-        color: black;
+        color: white;
         text-decoration: none;
         position: relative;
         padding: 10px 0;
@@ -8269,7 +8269,7 @@ h1, h2, h3, h4, h5,
           bottom: 7px;
           left: 0;
           right: 0;
-          background-color: #ff6768;
+          background-color: blueviolet;
           visibility: hidden;
           -webkit-transform: scaleX(0);
           -moz-transform: scaleX(0);
@@ -8283,7 +8283,7 @@ h1, h2, h3, h4, h5,
           transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
         #colorlib-aside #colorlib-main-menu ul li a:hover {
           text-decoration: none;
-          color: black; }
+          color: blueviolet; }
           #colorlib-aside #colorlib-main-menu ul li a:hover:after {
             visibility: visible;
             -webkit-transform: scaleX(1);
@@ -8292,7 +8292,7 @@ h1, h2, h3, h4, h5,
             -o-transform: scaleX(1);
             transform: scaleX(1); }
       #colorlib-aside #colorlib-main-menu ul li.colorlib-active a {
-        color: #ff6768; }
+        color: blueviolet; }
         #colorlib-aside #colorlib-main-menu ul li.colorlib-active a:after {
           visibility: visible;
           -webkit-transform: scaleX(1);
