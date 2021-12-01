@@ -7,17 +7,28 @@
 
 {% block content %}
 
-<section class='todosContainer'>
-    {% for todo in todos %}
-    
-    <div class='todoCard'>
-        <h1>{{todo.title}}</h1>
-        <p>{{todo.desc}}</p>
-        <h1>{{todo.date}}</h1>
-        <h1>{{todo.importance}}</h1>
+<section class='row'>
+{% for todo in todos %}
+
+    <div class='col-sm-4'>
+        
+        <div class="card mw-75">
+            <div class="card-header">
+                <h5 class="card-title">{{todo.title}}</h5>
+                <span>{{todo.importance}}</span>
+            </div>
+            <div class="card-body">
+            <p class="card-text">{{todo.description}}</p>      
+            </div>
+            <p class="card-footer text-muted">
+                {{todo.date}}
+            </p>
+            <a href="#" class="btn btn-primary">Edit</a>
+            <a href="#" class="btn btn-primary">Delete</a>
+        </div>
     </div>
-    
-    {% endfor %}
+
+{% endfor %}
 </section>
 
 {% endblock %}

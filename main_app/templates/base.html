@@ -12,7 +12,7 @@
 	
 	<link rel="stylesheet" href="{% static 'css/style.css' %}">
 	{% block head %}
-	
+
 	{% endblock %}
 
 	</head>
@@ -39,10 +39,26 @@
 		</aside> <!-- END COLORLIB-ASIDE -->
 	</div>
 
-	<main>
-		{% block content %}
-		{% endblock %}
-	</main>
+
+	<div id="colorlib-main">
+		<section class="ftco-section pt-4 mb-5 ftco-intro">
+			<div class="container-fluid px-3 px-md-0">
+				<div class="row">
+
+					<div class="col-md-12 mb-4">
+						<h1 class="h2">column1</h1>
+						<main>
+							{% block content %}
+							{% endblock %}
+						</main> 
+					</div>
+
+				</div>
+			</div>
+		</section>
+	</div><!-- END COLORLIB-MAIN -->
+</div><!-- END COLORLIB-PAGE -->
+
 
 	<script src="{% static 'js/jquery.min.js' %}"></script>
   <script src="{% static 'js/popper.js' %}"></script>
