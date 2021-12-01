@@ -11,12 +11,17 @@
 <form action="" method="POST" class="form">
   {% csrf_token %}
   <a 
-    href="{% url 'todos_detail' todo.id %}" 
+    href="{% url 'todos_delete' todo.id %}" 
     class="btn secondary"
   >
     Cancel
   </a>
-  <button type="submit" class="btn danger">Yes - Delete!</button>
+    <a 
+        href="{% url 'todos_delete' todo.id %}" 
+        class="btn secondary"
+    >
+        <button type="submit" class="btn danger">Yes - Delete!</button>
+    </a>
 </form>
 
 {% endblock %}
