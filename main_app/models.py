@@ -9,12 +9,15 @@ IMPORTANCE = (
 
 # Create your models here.
 class Todo(models.Model):
-  title = models.CharField(max_length=10)
-  description = models.CharField(max_length=400)
+    title = models.CharField(max_length=10)
+    description = models.CharField(max_length=400)
 
-  date = models.DateField()
-  importance = models.CharField(
-      max_length=1,
-      choices=IMPORTANCE,
-      default=IMPORTANCE[0][1]
-  )
+    date = models.DateField('Due Date')
+    importance = models.CharField(
+        max_length=1,
+        choices=IMPORTANCE,
+        default=IMPORTANCE[0][1]
+    )
+
+    def __str__(self):
+        return self.title
