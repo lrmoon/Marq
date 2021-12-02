@@ -34,7 +34,7 @@ class Todo(models.Model):
 class Event(models.Model):
     title = models.CharField(max_length=20)
     description = models.TextField(max_length=400)
-    date = models.DateField('Event:')
+    date = models.DateField('Event')
 
     def __str__(self):
       return self.title
