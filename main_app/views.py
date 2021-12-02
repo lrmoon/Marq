@@ -19,8 +19,8 @@ class TodoCreate(CreateView):
   success_url = '/todos/'
 
   def form_valid(self,form):
-      form.instance.user = self.request.user
-      return super().form_valid(form)
+    form.instance.user = self.request.user
+    return super().form_valid(form)
 
 class TodoUpdate(UpdateView):
   model = Todo
@@ -39,6 +39,15 @@ def events_index(request):
 class EventCreate(CreateView):
   model = Event
   fields = '__all__'
+  success_url = '/events/'
+
+class EventUpdate(UpdateView):
+  model = Event
+  fields = '__all__'
+  success_url = '/events/'
+
+class EventDelete(DeleteView):
+  model = Event
   success_url = '/events/'
 
 
