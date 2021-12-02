@@ -1,38 +1,43 @@
 # MARQ
 
-Marq was build to ease your day to day basics task.
+***MARQ***  was build to ease your day to day basics task.
 What can you do with Marq.
 
 Marq is a to-do list app that help you organise your stuff. You have the option to add, update, and delete your todos and events. you can also add a note to yourself for future reference.
 
-Next generation🚀🚀 
+Next generation🚀🚀 🚀🚀🚀
+
+<br />
 
 ## FOUNDERS
-[Abdel gitHub](https://github.com/abdelmanaf/Marq)
-[Jay gitHub](https://github.com/JahnoelRondon)
-[Laura gitHub](https://github.com/lrmoon/Marq)
+> - [Abdel gitHub](https://github.com/abdelmanaf/Marq)
+> - [Jay gitHub](https://github.com/JahnoelRondon)
+> - [Laura gitHub](https://github.com/lrmoon/Marq)
 
-
+<br />
 
 ## Link of the deployment app
 [deployment link](https://p4marq.herokuapp.com/)
 
 
+<br />
 
 ## Link of the Trello Board plan
 
 [Link to Trello](https://trello.com/b/i9os1vl4/project4)
 
 
+<br />
 
 ## App Usage
 
-You are requier to sign up then loggin into the app in order to use all the ressources available to you.
+> You are requier to sign up then loggin into the app in order to use all the ressources available to you.
+>
+> Once loggin, you have the power to add a todo and events items. Then you can add notes and delete notes.
+>
+> You will have the ability to update you profile information since nowadays, everyone like to use a nickname on their social media.
 
-Once loggin, you have the power to add a todo and events items. Then you can add notes and delete notes.
-
-You will have the ability to update you profile information since nowadays, everyone like to use a nickname on their social media.
-
+<br />
 
 ## Sreenshots
 ![marq img](https://i.imgur.com/kneUZyX.png)
@@ -41,15 +46,17 @@ You will have the ability to update you profile information since nowadays, ever
 
 ## Technologies-used
 
-### Python
+- Python
 
-### Django
+- Django
 
-### Heroku
+- Heroku
 
-### HTML and CSS
+- HTML and CSS
 
+- Bootstrap
 
+<br />
 
 ## Planned for future enhancements
 
