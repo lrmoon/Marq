@@ -5,15 +5,13 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
 from .models import Event, Todo
 
+class Home(LoginView):
+    template_name = 'home.html'
 
+######################1 todo code #########################
 def todos_index(request):
     todos = Todo.objects.filter(user=request.user)
     return render(request, 'todos/index.html', {"todos": todos})
-
-
-# Create your views here.
-class Home(LoginView):
-    template_name = 'home.html'
 
 class TodoCreate(CreateView):
   model = Todo
@@ -33,7 +31,18 @@ class TodoDelete(DeleteView):
   model = Todo
   success_url = '/todos/'
   
+######################## events code ##################################
+def events_index(request):
+  events = Event.objects.all()
+  return render(request, 'events/index.html', {"events": events})
 
+class EventCreate(CreateView):
+  model = Event
+  fields = '__all__'
+  success_url = '/events/'
+
+
+######################## signup ##################################
 def signup(request):
   error_message = ''
   if request.method == 'POST':
@@ -53,8 +62,6 @@ def signup(request):
   context = {'form': form, 'error_message': error_message}
   return render(request, 'signup.html', context)
 
-def events_index(request):
-  events = Event.objects.all()
-  return render(request, 'events/index.html', {"events": events})
+
 
 
