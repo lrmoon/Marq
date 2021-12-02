@@ -3,7 +3,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
-from .models import Todo
+from .models import Event, Todo
 
 
 def todos_index(request):
@@ -52,5 +52,9 @@ def signup(request):
   form = UserCreationForm()
   context = {'form': form, 'error_message': error_message}
   return render(request, 'signup.html', context)
+
+def events_index(request):
+  events = Event.objects.filter(user=request.user)
+  return render(request, 'events/index.html', {"events": events})
 
 
