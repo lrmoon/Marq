@@ -37,8 +37,8 @@
             </div>
             <div class="card-footer text-muted bg-white border-top-0">
                 <p>{{todo.date}}</p>
-                <a href="#" class="btn btn-primary btn-sm">Edit</a>
-                <a href="#" class="btn btn-link">Delete</a>
+                <a href="{% url 'todos_update' todo.id %}" class="btn btn-warning btn-sm">Edit</a>
+                <a href="{% url 'todos_delete' todo.id %}" class="btn btn-link text-danger">Delete</a>
             </div>
         </div>
     </div>

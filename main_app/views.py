@@ -24,6 +24,16 @@ class TodoCreate(CreateView):
       form.instance.user = self.request.user
       return super().form_valid(form)
 
+class TodoUpdate(UpdateView):
+  model = Todo
+  fields = ['description', 'date']
+  success_url = '/todos/'
+
+class TodoDelete(DeleteView):
+  model = Todo
+  success_url = '/todos/'
+  
+
 def signup(request):
   error_message = ''
   if request.method == 'POST':
