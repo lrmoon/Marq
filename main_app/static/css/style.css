@@ -9,7 +9,7 @@ body::before {
   right: 0;
   left:0;
   bottom: 0;
-  opacity: 0.6;
+  opacity: 0.5;
   backdrop-filter: blur(50px);
 }
 
@@ -44,6 +44,7 @@ body::before {
 body {
   background-color: cornflowerblue;
 }
+
 
 ---------/* Bootstrap code below*/
 
