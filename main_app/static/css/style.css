@@ -1,25 +1,48 @@
 /* My code below*/
-.bg-image {
-  /* The image used */
-  background-image: url("https://i.imgur.com/pzUNszo.jpg");
-  
-  /* Add the blur effect */
-  
-  /* Full height */
-  height: 100%; 
-  
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
+body::before {
+  content: "";
+  background-image: url("https://images.unsplash.com/photo-1527168027773-0cc890c4f42e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
   background-size: cover;
-
-  /* positioning */
-  z-index: 1;
-  position: relative;
+  background-repeat: no-repeat;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left:0;
+  bottom: 0;
+  opacity: 0.6;
+  backdrop-filter: blur(50px);
 }
 
-.blur {
-  backdrop-filter: blur(10px);
+#blur-around {
+  position: fixed;
+  z-index: 9;
+  pointer-events: none;
+  width: 200vw;
+  height: 200vh;
+  left: -100vw;
+  top: -100vh;
+  transform-origin: center;
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  -webkit-mask-image: radial-gradient(
+    50px at 50% 50%,
+    transparent 90%,
+    black 100%
+  );
+  mask-image: radial-gradient(
+    50px at 50% 50%,
+    transparent 90%,
+    black 100%
+  );
+}
+
+.content-wrap{
+  position: relative;
+  z-index: 10;
+}
+
+body {
+  background-color: cornflowerblue;
 }
 
 ---------/* Bootstrap code below*/

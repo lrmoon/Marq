@@ -18,56 +18,65 @@
 	</head>
 
 	<body>
+	<div id="blur-around"></div>
+	<div class="content-wrap">
 
-	<div id="colorlib-page">
-		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
-		<aside id="colorlib-aside" role="complementary" class="js-fullheight">
-			<nav id="colorlib-main-menu" role="navigation">
-				<h1>Marq</h1>
-				<ul>
-				 {% if user.is_authenticated %}
-					<li><a href="#">Calendar</a></li>
-					<li><a href="{% url 'todos_index' %}">To-Do's</a></li>
-					<li><a href="#">Events</a></li>
-					<li><a href="#">Notes</a></li>
-					<li><a href="{% url 'logout' %}">Log Out</a></li>
-				 {% else %}
-					<li><a href="/">Login</a></li>
-					<li><a href="{% url 'signup' %}">Sign Up</a></li>
-				 {% endif %}	
-				</ul>
+		<div id="colorlib-page">
+			<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
+			<aside id="colorlib-aside" role="complementary" class="js-fullheight">
+				<nav id="colorlib-main-menu" role="navigation">
+					<h1>Marq</h1>
+					<ul>
+					{% if user.is_authenticated %}
+						<li><a href="#">Calendar</a></li>
+						<li><a href="{% url 'todos_index' %}">To-Do's</a></li>
+						<li><a href="#">Events</a></li>
+						<li><a href="#">Notes</a></li>
+						<li><a href="{% url 'logout' %}">Log Out</a></li>
+					{% else %}
+						<li><a href="/">Login</a></li>
+						<li><a href="{% url 'signup' %}">Sign Up</a></li>
+					{% endif %}	
+					</ul>
 
-			</nav>
-		</aside> <!-- END COLORLIB-ASIDE -->
-	</div>
+				</nav>
+			</aside> <!-- END COLORLIB-ASIDE -->
+		</div>
 
+		<div id="colorlib-main">
+			<section class="ftco-section pt-4 mb-5 ftco-intro">
+				<div class="container-fluid px-3 px-md-0">
 
-	<div id="colorlib-main">
-		<section class="ftco-section pt-4 mb-5 ftco-intro bg-image">
-			<div class="container-fluid px-3 px-md-0">
+					<div class="row">
 
-				<div class="row">
+						<div class="col-md-12 mb-4">
+							<main class="">
+								{% block content %}
+								{% endblock %}
+							</main> 
 
-					<div class="col-md-12 mb-4">
-						<main class="blur">
-							{% block content %}
-							{% endblock %}
-						</main> 
+						</div>
 
 					</div>
-
 				</div>
-			</div>
-		</section>
-	</div><!-- END COLORLIB-MAIN -->
+			</section>
+		</div><!-- END COLORLIB-MAIN -->
+
+	</div>
 </div><!-- END COLORLIB-PAGE -->
 
 
 	<script src="{% static 'js/jquery.min.js' %}"></script>
-  <script src="{% static 'js/popper.js' %}"></script>
-  <script src="{% static 'js/bootstrap.min.js' %}"></script>
-  <script src="{% static 'js/main.js' %}"></script>
-
+	<script src="{% static 'js/popper.js' %}"></script>
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'js/main.js' %}"></script>
+	<script>
+	const blur_el = document.getElementById("blur-around");
+	
+	document.onmousemove = (e) => {
+		blur_el.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`
+	}
+</script>
 	</body>
 </html>
 
