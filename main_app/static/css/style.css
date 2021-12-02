@@ -1,3 +1,31 @@
+/* My code below*/
+.bg-image {
+  /* The image used */
+  background-image: url("https://i.imgur.com/pzUNszo.jpg");
+  
+  /* Add the blur effect */
+  backdrop-filter: blur(8px);
+  
+  /* Full height */
+  height: 100%; 
+  
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  /* positioning */
+  z-index: 1;
+
+}
+
+.bg-children {
+  z-index: 10;
+  position: relative;
+}
+
+---------/* Bootstrap code below*/
+
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
@@ -8237,7 +8265,7 @@ h1, h2, h3, h4, h5,
       -o-transform: translateX(-270px);
       transform: translateX(-270px);
       padding-top: 2em;
-      background: rgba(0, 0, 0, 0.04); } }
+      background: cornflowerblue; } }
   #colorlib-aside #colorlib-main-menu ul {
     margin: 0;
     padding: 0; }
