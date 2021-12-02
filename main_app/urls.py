@@ -11,6 +11,6 @@ urlpatterns = [
     ########################3 Signup paths ##############################
     path('accounts/signup/', views.signup, name='signup'),
     ########################3 Event paths ##############################
-    path('event/', views.events_index, name='events_index'),
+    path('events/', views.events_index, name='events_index'),
 ]
 

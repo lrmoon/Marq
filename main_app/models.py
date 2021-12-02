@@ -14,7 +14,7 @@ class Importance_levels(models.Model):
 
 class Todo(models.Model):
     title = models.CharField(max_length=10)
-    description = models.CharField(max_length=400)
+    description = models.TextField(max_length=400)
     date = models.DateField('Due Date')
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     IMPORTANCE = [
@@ -33,8 +33,8 @@ class Todo(models.Model):
 
 class Event(models.Model):
     title = models.CharField(max_length=20)
-    description = models.CharField(max_length=400)
-    date = models.DateField('Event')
+    description = models.TextField(max_length=400)
+    date = models.DateField('Event:')
 
     def __str__(self):
       return self.title

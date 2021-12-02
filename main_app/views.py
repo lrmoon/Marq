@@ -26,7 +26,7 @@ class TodoCreate(CreateView):
 
 class TodoUpdate(UpdateView):
   model = Todo
-  fields = ['description', 'date']
+  fields = ['title','description', 'date', 'importance']
   success_url = '/todos/'
 
 class TodoDelete(DeleteView):
@@ -54,7 +54,7 @@ def signup(request):
   return render(request, 'signup.html', context)
 
 def events_index(request):
-  events = Event.objects.filter(user=request.user)
+  events = Event.objects.all()
   return render(request, 'events/index.html', {"events": events})
 
 
