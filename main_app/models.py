@@ -36,3 +36,6 @@ class Event(models.Model):
     description = models.CharField(max_length=400)
     date = models.DateField('Event')
 
+    def __str__(self):
+      return self.title
+
