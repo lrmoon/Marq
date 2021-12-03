@@ -1,18 +1,17 @@
 # MARQ
 
-***MARQ***  was build to ease your day to day basics task.
-What can you do with Marq.
+***MARQ***  Welcome to Marq, your new go-to spot to organize your life. With Marq, you can create to-do lists, create events on a calendar, and create notes to jot down your day to day ideas. 
 
-Marq is a to-do list app that help you organise your stuff. You have the option to add, update, and delete your todos and events. you can also add a note to yourself for future reference.
+You have the option to add, update, and delete your todos and events. You can also add a note to yourself for future reference.
 
 Next generation🚀🚀 🚀🚀🚀
 
 <br />
 
 ## FOUNDERS
-> - [Abdel gitHub](https://github.com/abdelmanaf/Marq)
-> - [Jay gitHub](https://github.com/JahnoelRondon)
-> - [Laura gitHub](https://github.com/lrmoon/Marq)
+> - [Abdel's gitHub](https://github.com/abdelmanaf/Marq)
+> - [Jahnoel's gitHub](https://github.com/JahnoelRondon)
+> - [Lara's gitHub](https://github.com/lrmoon/Marq)
 
 <br />
 
@@ -31,11 +30,11 @@ Next generation🚀🚀 🚀🚀🚀
 
 ## App Usage
 
-> You are requier to sign up then loggin into the app in order to use all the ressources available to you.
+> You are required to sign up then login in order to use all the ressources available to you.
 >
-> Once loggin, you have the power to add a todo and events items. Then you can add notes and delete notes.
+> Once you're logged in, you have the ability to add a to-do's and events as well as edit and delete them.
 >
-> You will have the ability to update you profile information since nowadays, everyone like to use a nickname on their social media.
+
 
 <br />
 
@@ -56,10 +55,12 @@ Next generation🚀🚀 🚀🚀🚀
 
 - Bootstrap
 
+- JavaScript
+
 <br />
 
 ## Planned for future enhancements
 
-As a user, I want to be notify by email from the app.
+As a user, I want to be notified by email from the app.
 As a user, I want to be able to switch between light and dark mode.
-As a user, I want to see my things to  do in order by importance.
+As a user, I want to see my to-do list in order by importance.
