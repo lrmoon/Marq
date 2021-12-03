@@ -104,5 +104,13 @@ def event(request, event_id=None):
     form = EventForm(request.POST or None, instance=instance)
     if request.POST and form.is_valid():
         form.save()
-        return HttpResponseRedirect(reverse('cal:calendar'))
+        return HttpResponseRedirect(reverse('calendar'))
     return render(request, 'cal/event.html', {'form': form})
+
+class EventUpdate(UpdateView):
+  model = Event
+  instance = Event()
+  fields = '__all__'
+  
+
+  success_url = '/calendar/'

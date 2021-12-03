@@ -11,5 +11,7 @@ urlpatterns = [
     path('accounts/signup/', views.signup, name='signup'),
     
     path('calendar/', views.CalendarView.as_view(), name='calendar'),
+    path('events/create/', views.event, name='event_new'),
+    path('events/<int:pk>/update/', views.EventUpdate.as_view(), name='event_edit'),
 ]
 
