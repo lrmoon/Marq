@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	
 	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/calendar.css' %}">
 	{% block head %}
 
 	{% endblock %}
@@ -26,9 +27,9 @@
 				<h1>Marq.</h1>
 				<ul>
 				 {% if user.is_authenticated %}
-					<li><a href="#">Calendar</a></li>
+					<li><a href="{%url 'calendar'%}">Calendar</a></li>
 					<li><a href="{% url 'todos_index' %}">To-Do's</a></li>
-					<li><a href="#">Events</a></li>
+					<li><a href="{%url 'events_index'%}">Events</a></li>
 					<li><a href="#">Notes</a></li>
 					<li><a href="{% url 'logout' %}">Log Out</a></li>
 				 {% else %}
