@@ -31,9 +31,9 @@
 					<h1>Marq</h1>
 					<ul>
 					{% if user.is_authenticated %}
-						<li><a href="#">Calendar</a></li>
+						<li><a href="{% url 'calendar' %}">Calendar</a></li>
 						<li><a href="{% url 'todos_index' %}">To-Do's</a></li>
-						<li><a href="#">Events</a></li>
+						<li><a href="{% url 'events_index' %}">Events</a></li>
 						<li><a href="#">Notes</a></li>
 						<li><a href="{% url 'logout' %}">Log Out</a></li>
 					{% else %}
