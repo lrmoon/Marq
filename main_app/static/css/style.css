@@ -8497,3 +8497,7 @@ h1, h2, h3, h4, h5,
     .colorlib-nav-toggle {
       opacity: 1;
       visibility: visible; } }
+
+.simplepicker-wrapper {
+  z-index: 10;
+}

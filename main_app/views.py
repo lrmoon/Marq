@@ -33,7 +33,7 @@ class TodoCreate(CreateView):
 
 class TodoUpdate(UpdateView):
   model = Todo
-  fields = ['description', 'date']
+  fields = ['title', 'description','date', 'importance']
   success_url = '/todos/'
 
 class TodoDelete(DeleteView):
