@@ -27,7 +27,7 @@
             </div>
             <div class="card-footer text-muted bg-white border-top-0">
                 <p>{{event.date}}</p>
-                <a href="{% url 'events_update' event.id %}" class="btn btn-warning btn-sm">Edit</a>
+                <a href="{% url 'event_edit' event.id %}" class="btn btn-warning btn-sm">Edit</a>
                 <a href="{% url 'events_delete' event.id %}" class="btn btn-link text-danger">Delete</a> 
             </div>
         </div>

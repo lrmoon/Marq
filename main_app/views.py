@@ -111,6 +111,13 @@ class EventUpdate(UpdateView):
   model = Event
   instance = Event()
   fields = '__all__'
-  
-
   success_url = '/calendar/'
+
+def events_index(request):
+  events = Event.objects.all()
+  return render(request, 'events/index.html', {"events": events})
+
+class EventDelete(DeleteView):
+  model = Event
+  success_url = '/events/'
+
