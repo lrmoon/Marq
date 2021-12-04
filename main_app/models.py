@@ -34,7 +34,7 @@ class Todo(models.Model):
 
 class Event(models.Model):
     title = models.CharField(max_length=200)
-    description = models.TextField()
+    description = models.TextField(max_length=400)
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
 
