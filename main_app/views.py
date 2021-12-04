@@ -173,3 +173,11 @@ class NoteDelete(DeleteView):
   success_url = '/notes/'
 
 
+class NoteCreate(CreateView):
+  model = Note
+  fields = ['title', 'note','image', 'video']
+  success_url = '/notes/'
+
+  
+
+
