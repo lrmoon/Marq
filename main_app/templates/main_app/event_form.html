@@ -13,6 +13,7 @@
 <div class="page-header">
   {% if object %}
     <h1>Edit {{object.name}}</h1>
+    <a href="{% url 'events_delete' event.id %}" class="btn btn-link text-danger">Delete</a> 
   {% else %}
     <h1>Add An Event To the Calendar</h1>
   {% endif %}

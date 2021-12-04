@@ -151,7 +151,7 @@ def add_photo(request, note_id):
       photo.save()
     except Exception as err:
       print('An error occurred uploading file to S3: %s' % err)
-  return redirect('notes_detail', note_id=note_id)
+  return redirect('notes_update', note_id=note_id)
 
 
 def notes_index(request):
