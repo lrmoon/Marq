@@ -8501,6 +8501,14 @@ body {
 }
 
 /* Jay's Override CSS  */
+.red-text {
+  color: black;
+}
+
+.helptext {
+  color: black;
+}
+
 .simplepicker-wrapper {
   z-index: 10;
 }

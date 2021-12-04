@@ -56,24 +56,26 @@ a {
   margin: 15px;
 }
 
+/* form */
 .form {
   margin: auto;
 }
 
 .form input, .form select, .form textarea {
   border-radius: 5px;
-  border: 1px solid #17a2b8;
+  border: 1px solid black;
   outline: none;
-  background: none;
+  background: white;
   padding: 5px;
   width: 100%;
 }
 
 /* Jays override */
 
+
 /* styling for calendar boxes */
 td ul li  {
-  list-style:decimal;
+  list-style: decimal;
 }
 
 td ul li a {
