@@ -25,8 +25,9 @@
             <div class="card-body card-body-todo">
                 <p class="card-text">{{event.description}}</p>      
             </div>
+
             <div class="card-footer text-muted bg-white border-top-0">
-                <p>{{event.date}}</p>
+                <p class='font-italic text-muted'>{{event.start_time}}</p>
                 <a href="{% url 'event_edit' event.id %}" class="btn btn-primary btn-sm">Edit</a>
                 <a href="{% url 'events_delete' event.id %}" class="btn btn-link text-danger">Delete</a> 
             </div>
