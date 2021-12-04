@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block content %}
+
+<section class='row'>
+    {% for note in notes %}
+        <div class='col-sm-6 col-md-4 col-lg-3 mb-3'>
+            
+            <div class="card mx-auto shadow-lg " style="width: 190px;">
+                
+                <div class="card-header d-flex justify-content-between bg-white border-bottom-0">
+                    <h5 class="card-title"><a href="notes/<int:pk>/update/">{{note.title}}</a></h5>
+                    <span style="height:20px;" class='badge border'>
+                </div>
+    
+                <div class="card-body card-body-todo">
+                    <p class="card-text">{{note.description}}</p>      
+                </div>
+                <div class="card-body card-body-todo">
+                    <p class="card-text">{{note.video}}</p>      
+                </div>
+                <div class="card-body card-body-todo">
+                    <p class="card-text">{{note.image}}</p>      
+                </div>
+                <div class="card-footer text-muted bg-white border-top-0">
+                    <p>{{note.date}}</p>
+                    {% comment %} <a href="{% url 'todos_update' todo.id %}" class="btn btn-warning btn-sm">Edit</a>
+                    <a href="{% url 'todos_delete' todo.id %}" class="btn bg-transparent btn-link text-danger">Delete</a> {% endcomment %}
+                </div>
+            </div>
+        </div>
+
+{% endblock %}

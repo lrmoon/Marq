@@ -15,5 +15,12 @@ urlpatterns = [
     path('events/create/', views.event, name='event_new'),
     path('events/<int:pk>/update/', views.EventUpdate.as_view(), name='event_edit'),
     path('events/<int:pk>/delete/', views.EventDelete.as_view(), name='events_delete'),
+    path('notes/<int:note_id>/add_photo/', views.add_photo, name='add_photo'),
+
+    path('notes/', views.notes_index, name='notes_index'),
+    #path('notes/<int:note_id>/', views.notes_detail, name='notes_detail' )
+    path('notes/<int:pk>/update/', views.NoteUpdate.as_view(), name='notes_update'),
+    path('notes/<int:pk>/delete/', views.NoteDelete.as_view(), name='notes_delete'),
+    
 ]
 

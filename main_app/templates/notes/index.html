@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="{% static 'css/note.css' %}">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="text-center">
+    <a href="/notes/create" class="btn btn-primary mb-3">Add a Note</a>
+</div>
+
+<section class='row'>
+{% for note in notes %}
+<div>    
+<div class='col-sm-6 col-md-4 col-lg-3 mb-3'>
+        
+        <div class="card mx-auto shadow-lg " style="width: 190px;">
+            
+            <div class="card-header d-flex justify-content-between bg-white border-bottom-0">
+                <h5 class="card-title">
+                    <a href="{%url 'notes_update' note.id %}">{{note.title}}</a>
+                </h5>
+                <span style="height:20px;" class='badge border'>
+            </div>
+
+            <div class="card-body card-body-todo">
+                <p class="card-text">{{note.description}}</p>      
+            </div>
+            <div class="card-body card-body-todo">
+                <p class="card-text">{{note.video}}</p>      
+            </div>
+            <div class="card-body card-body-todo">
+                <p class="card-text">{{note.image}}</p>      
+            </div>
+            <div class="card-footer text-muted bg-white border-top-0">
+                <p>{{note.date}}</p>
+                {% comment %} <a href="{% url 'notes_update' note.id %}" class="btn btn-warning btn-sm">Edit</a> {% endcomment %}
+                
+                <a href="{%url 'notes_update' note.id %}" class="stretched-link"></a>
+                
+            </div>
+            
+        </div>
+    </div>
+    <div class="delete">
+    <button class="btn btn-danger"><a href="{% url 'notes_delete' note.id %}" class='text-white'>Delete</a></button>
+    </div>
+</div>   
+{% endfor %}
+</section>
+
+{% endblock %}
