@@ -131,6 +131,7 @@ class EventDelete(DeleteView):
 def add_photo(request, note_id):
   # photo-file will be the "name" attribute on the <input type="file">
   photo_file = request.FILES.get('photo-file', None)
+  print(photo_file)
   if photo_file:
     s3 = boto3.client('s3')
     # need a unique "key" for S3 / needs image file extension too
@@ -149,9 +150,10 @@ def add_photo(request, note_id):
       if note_photo.first():
         note_photo.first().delete()
       photo.save()
+      print(photo)
     except Exception as err:
       print('An error occurred uploading file to S3: %s' % err)
-  return redirect('notes_update', note_id=note_id)
+  return redirect('notes_update', pk=note_id)
 
 
 def notes_index(request):

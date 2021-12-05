@@ -33,11 +33,11 @@
     <h1> Create a New Note </h1>
     {% endif %}
 </div>
-<div class="cat-img">
-    {% if cat.photo.url %}
+<div class="note-img">
+    {% if note.photo.url %}
       <img 
-        src="{{cat.photo.url}}" 
-        alt="A photo of {{cat.name}}"
+        src="{{note.photo.url}}"
+        alt="A photo of {{note.title}}"
         class="usr-img"
       >
     {% else %}
