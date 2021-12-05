@@ -135,3 +135,8 @@ class TimerList(ListView):
 class TimerDetail(DetailView):
     model = Timer
     template_name = 'timers/detail.html'
+
+class TimerCreate(CreateView):
+  model = Timer
+  fields = '__all__'
+  success_url = '/timers/'

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<script defer src="https://cdn.jsdelivr.net/npm/simplepicker@2.0.4/dist/simplepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplepicker@2.0.4/dist/simplepicker.min.css">
+<script defer src="{% static 'js/timerForm.js' %}"></script> 
+<link rel="stylesheet" type="text/css" href="{% static 'css/form.css' %}"/>
+{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+  {% if object %}
+    <h1>Edit Timer</h1>
+  {% else %}
+    <h1>Add to Timer list</h1>
+  {% endif %}
+  
+</div>
+{% comment %} 
+  Leaving the action empty makes the form post to the same url used to display it
+{% endcomment %}
+<form action="" method="post" class="form-container">
+  {% comment %} 
+    Django requires the following for security purposes
+  {% endcomment %}
+  {% csrf_token %}
+  <table>
+    {% comment %}
+      Render the inputs inside of <tr>s & <td>s
+    {% endcomment %}
+    {{ form.as_table }}
+  </table>
+  <div class="d-flex justify-content-end p-3">
+    <a href="{% url 'timers_index' %}" class="btn btn-primary submit m-0"> Cancel </a>
+    <button type="submit" class="btn btn-primary submit mr-0 ml-2">Submit!</button>    
+  </div>
+</form>
+
+{% endblock %}

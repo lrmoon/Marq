@@ -2,9 +2,13 @@
 {% load static %}
 
 {% block content %}
-    {% for obj in object_list %}
+<div class="text-center">
+    <a href="create" class="btn btn-primary mb-3">Add a Timer</a>
+</div>
+
+{% for obj in object_list %}
         <div>
             <a href={{obj.get_absolute_url}}>{{obj.title}}</a>
         </div>
-    {% endfor %}
+{% endfor %}
 {% endblock %}

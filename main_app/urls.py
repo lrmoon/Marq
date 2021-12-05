@@ -17,7 +17,8 @@ urlpatterns = [
     path('events/<int:pk>/delete/', views.EventDelete.as_view(), name='events_delete'),
 
     path('timers/', views.TimerList.as_view(), name='timers_index'),
-    path('timers/<int:pk>/', views.TimerDetail.as_view(), name='timers_detail')
+    path('timers/<int:pk>/', views.TimerDetail.as_view(), name='timers_detail'),
+    path('timers/create/', views.TimerCreate.as_view(), name="timers_create"),
 
 ]
 

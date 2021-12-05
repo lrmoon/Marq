@@ -44,7 +44,7 @@ class Event(models.Model):
 
 class Timer(models.Model):
     title = models.CharField(max_length=20)
-    when = models.DateTimeField()
+    when = models.DateTimeField("Time Until")
 
     def get_absolute_url(self):
         return reverse("timers_detail", kwargs={"pk": self.pk})
