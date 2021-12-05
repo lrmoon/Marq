@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, DeleteView
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
@@ -121,3 +123,15 @@ class EventDelete(DeleteView):
   model = Event
   success_url = '/events/'
 
+
+# Timer Code
+
+
+class TimerList(ListView):
+    model = Timer
+    template_name = 'timers/index.html'
+
+
+class TimerDetail(DetailView):
+    model = Timer
+    template_name = 'timers/detail.html'

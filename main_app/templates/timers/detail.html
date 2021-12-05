@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+    <script defer src={% static 'js/timer.js' %}></script>
+{% endblock head %}
+
+{% block content %}
+    <div class='row'>
+
+        <div class='col-5'>
+            <div>{{object.title}} will take place:</div>
+        </div>
+
+        <div class='col-7'>
+            <div id='event-box'>{{object.when|date:"M d, Y H:m:s"}}</div>
+        </div>
+
+    </div>
+    
+    <div>Time left:</div>
+    <div id='countdown-box'>
+        <div class="spinner-border" role="status"></div>
+    </div>
+{% endblock content %}
