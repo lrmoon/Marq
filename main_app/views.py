@@ -140,3 +140,7 @@ class TimerCreate(CreateView):
   model = Timer
   fields = '__all__'
   success_url = '/timers/'
+
+class TimerDelete(DeleteView):
+  model = Timer
+  success_url = '/timers/'

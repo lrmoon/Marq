@@ -19,6 +19,7 @@ urlpatterns = [
     path('timers/', views.TimerList.as_view(), name='timers_index'),
     path('timers/<int:pk>/', views.TimerDetail.as_view(), name='timers_detail'),
     path('timers/create/', views.TimerCreate.as_view(), name="timers_create"),
+    path('timers/<int:pk>/delete/', views.TimerDelete.as_view(), name='timers_delete'),
 
 ]
 

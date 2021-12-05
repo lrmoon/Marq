@@ -10,5 +10,6 @@
         <div>
             <a href={{obj.get_absolute_url}}>{{obj.title}}</a>
         </div>
+        <a href="{% url 'timers_delete' obj.id %}" class="btn bg-transparent btn-link text-danger">Delete</a>
 {% endfor %}
 {% endblock %}
