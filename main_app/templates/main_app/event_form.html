@@ -33,10 +33,12 @@
     {% endcomment %}
     {{ form.as_table }}
   </table>
-  
-    <a href="{% url 'events_index' %}" class="btn secondary"> Cancel </a>
-    <button type="submit" class="btn submit">Submit!</button>
 
+  <div class="d-flex justify-content-end p-3">
+    <a href="{% url 'events_index' %}" class="btn btn-primary submit m-0"> Cancel </a>
+    <button type="submit" class="btn btn-primary submit mr-0 ml-2">Submit!</button>    
+  </div>
+    
 </form>
 
 {% endblock %}

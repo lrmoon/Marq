@@ -12,7 +12,7 @@
   {% csrf_token %}
   <a 
     href="{% url 'todos_index' %}" 
-    class="btn secondary"
+    class="btn  btn-primary secondary"
   >
     Cancel
   </a>
@@ -20,7 +20,7 @@
         href="{% url 'todos_delete' todo.id %}" 
         class="btn secondary"
     >
-        <button type="submit" class="btn danger">Yes - Delete!</button>
+        <button type="submit" class="btn btn-danger danger">Yes - Delete!</button>
     </a>
 </form>
 

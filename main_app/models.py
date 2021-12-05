@@ -7,10 +7,6 @@ from django.db.models.deletion import CASCADE
 
 
 # Create your models here.
-class Importance_levels(models.Model):
-    name = models.CharField(max_length=250)
-    abreviation = models.CharField(max_length=1)
-
 
 class Todo(models.Model):
     title = models.CharField(max_length=10)
@@ -33,8 +29,8 @@ class Todo(models.Model):
 
 
 class Event(models.Model):
-    title = models.CharField(max_length=200)
-    description = models.TextField()
+    title = models.CharField(max_length=20)
+    description = models.TextField(max_length=400)
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
 
