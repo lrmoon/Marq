@@ -1,6 +1,7 @@
 from django.db import models
-from datetime import date
+from datetime import date, datetime
 from django.urls import reverse
+
 
 from django.contrib.auth.models import User
 from django.db.models.deletion import CASCADE
@@ -40,6 +41,7 @@ class Event(models.Model):
         return f'<a href="{url}"> {self.title} </a>'
 
 
+
 # Timer model
 
 class Timer(models.Model):
@@ -52,3 +54,17 @@ class Timer(models.Model):
 
     def __str__(self):
       return self.title
+
+class Note(models.Model):
+  title = models.CharField(max_length=100)
+  note = models.TextField(max_length=500)
+  createdAt = models.DateTimeField(default=datetime.now, blank=True)
+  
+
+
+class Photo(models.Model):
+  url = models.CharField(max_length=250)
+  note = models.OneToOneField(Note, on_delete=models.CASCADE)
+
+  def __str__(self):
+    return f"Photo for note_id: {self.note_id} @{self.url}"

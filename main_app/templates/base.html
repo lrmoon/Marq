@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.ico' %}"/>
+
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="{% static 'css/calendar.css' %}">
 	{% block head %}
@@ -34,12 +37,14 @@
 					<h1 class='title'>Marq</h1>
 					<ul>
 					{% if user.is_authenticated %}
+
 						<li class="nav-item {% if request.path == '/calendar/' %}colorlib-active{% endif %}"><a href="{% url 'calendar' %}">Calendar</a></li>
 						<li class="nav-item {% if request.path == '/todos/' %}colorlib-active{% endif %}"><a href="{% url 'todos_index' %}">To-Do's</a></li>
 						<li class="nav-item {% if request.path == '/events/' %}colorlib-active{% endif %}"><a href="{% url 'events_index' %}">Events</a></li>
-						{% comment %} <li><a href="#">Notes</a></li> {% endcomment %}
+						<li class="nav-item {% if request.path == '/notes/' %}colorlib-active{% endif %}"><a href="{% url 'notes_index' %}">Notes</a></li>
 						<li class="nav-item {% if request.path == '/timers/' %}colorlib-active{% endif %}"><a href="{% url 'timers_index' %}">Timer</a></li>
-						<li ><a href="{% url 'logout' %}">Log Out</a></li>
+						<li ><a href="{% url 'logout' %}">Log Out</a></li>		
+
 					{% else %}
 						<li class="nav-item {% if request.path == '/' %}colorlib-active{% endif %}"><a href="/">Login</a></li>
 						<li class="nav-item {% if request.path == '/accounts/signup/' %}colorlib-active{% endif %}"><a href="{% url 'signup' %}">Sign Up</a></li>

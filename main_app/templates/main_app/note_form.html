@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/form.css' %}"/>
+<script defer src="{% static 'js/noteForm.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+    {% if object %}
+    <h1>Edit  {{object.title}}</h1>
+    <h3>Change {{ note.title }}'s photo</h3>
+      <p id="file-name"></p>
+      <form 
+        action="{% url 'add_photo' note.id %}"
+        enctype="multipart/form-data"
+        method="POST"
+      >
+        {% csrf_token %}
+        <label class="btn secondary">
+          Choose photo
+          <input type="file" name="photo-file" id="file-input">
+        </label>
+        <button type="submit" class="btn submit">Upload Photo</button>
+      </form>
+    </div>
+    {% else %}
+    <div class="note-img">
+        
+      </div>
+    <h1> Create a New Note </h1>
+    {% endif %}
+</div>
+<div class="note-img">
+    {% if note.photo.url %}
+      <img 
+        src="{{note.photo.url}}"
+        alt="A photo of {{note.title}}"
+        class="usr-img"
+      >
+    {% else %}
+      <img 
+        src="{% static 'images/placeholder.jpeg' %}" 
+        alt="Place image here"
+      >
+    {% endif %}
+  </div>
+<div>
+<form action="" method="post" class="form-container">
+ 
+  {% csrf_token %}
+  <table>
+    {{ form.as_table }}
+  </table>
+  <a href="{% url 'notes_index' %}" class="btn btn-primary submit m-0"> Cancel </a>
+  <button type="submit" class="btn submit">Submit!</button>
+</form>
+</div>
+{% endblock %}
