@@ -34,7 +34,7 @@
 						<li><a href="{% url 'calendar' %}">Calendar</a></li>
 						<li><a href="{% url 'todos_index' %}">To-Do's</a></li>
 						<li><a href="{% url 'events_index' %}">Events</a></li>
-						<li><a href="#">Notes</a></li>
+						{% comment %} <li><a href="#">Notes</a></li> {% endcomment %}
 						<li><a href="{% url 'timers_index' %}">Timer</a></li>
 						<li><a href="{% url 'logout' %}">Log Out</a></li>
 					{% else %}

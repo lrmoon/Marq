@@ -8516,3 +8516,20 @@ body {
 .errorlist {
   color: black;
 }
+
+
+
+/* bootstrap overrride */
+.btn-primary {
+  background-color: #6f42c1;
+  border-color: #6f42c1;
+}
+
+.btn-primary:hover {
+  background-color: #5a32a3;
+  border-color: #5a32a3;
+}
+
+.text-primary {
+  color: #5a32a3 !important;
+}
