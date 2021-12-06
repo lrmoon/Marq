@@ -8535,6 +8535,25 @@ body {
   z-index: 10;
 }
 
+.simplepicker-day-header {
+  background-color: #0069d9;
+}
+
+.simplepicker-date-section,
+.simplepicker-btn:active, .simplepicker-btn:hover {
+  background-color: cornflowerblue;
+}
+
+.simplepicker-calender tbody .active:after, 
+.simplepicker-calender tbody td:active:after {
+  background-color: #6f42c1;
+}
+
+.simplepicker-btn {
+  border-color: #0069d9;
+  color: #0069d9;
+}
+
 /* bootstrap overrride */
 .btn-primary {
   background-color: #6f42c1;
