@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import login
 from django.http import HttpResponseRedirect
 from django.utils.safestring import mark_safe
@@ -28,7 +30,7 @@ def todos_index(request):
 class Home(LoginView):
     template_name = 'home.html'
 
-class TodoCreate(CreateView):
+class TodoCreate(LoginRequiredMixin, CreateView):
   model = Todo
   fields = ['title', 'description','date', 'importance']
   success_url = '/todos/'
@@ -37,12 +39,12 @@ class TodoCreate(CreateView):
       form.instance.user = self.request.user
       return super().form_valid(form)
 
-class TodoUpdate(UpdateView):
+class TodoUpdate(LoginRequiredMixin, UpdateView):
   model = Todo
   fields = ['title', 'description','date', 'importance']
   success_url = '/todos/'
 
-class TodoDelete(DeleteView):
+class TodoDelete(LoginRequiredMixin, DeleteView):
   model = Todo
   success_url = '/todos/'
   
@@ -67,7 +69,8 @@ def signup(request):
   return render(request, 'signup.html', context)
 
 
-class CalendarView(generic.ListView):
+
+class CalendarView(LoginRequiredMixin, generic.ListView):
     model = Event
     template_name = 'cal/calendar.html'
 
@@ -113,22 +116,23 @@ def event(request, event_id=None):
         return HttpResponseRedirect(reverse('calendar'))
     return render(request, 'cal/event.html', {'form': form})
 
-class EventUpdate(UpdateView):
+class EventUpdate(LoginRequiredMixin, UpdateView):
   model = Event
   instance = Event()
   fields = '__all__'
   success_url = '/calendar/'
 
+@login_required
 def events_index(request):
   events = Event.objects.all()
   return render(request, 'events/index.html', {"events": events})
 
-class EventDelete(DeleteView):
+class EventDelete(LoginRequiredMixin, DeleteView):
   model = Event
   success_url = '/events/'
 
 
-
+@login_required
 def add_photo(request, note_id):
   # photo-file will be the "name" attribute on the <input type="file">
   photo_file = request.FILES.get('photo-file', None)
@@ -156,27 +160,28 @@ def add_photo(request, note_id):
       print('An error occurred uploading file to S3: %s' % err)
   return redirect('notes_update', pk=note_id)
 
-
+@login_required
 def notes_index(request):
     notes = Note.objects.all()
     return render(request, 'notes/index.html', {"notes": notes})
 
+@login_required
 def notes_detail(request,note_id):
     note = Note.objects.get(id=note_id)
     return render(request, 'notes/detail.html', {'note':note})
 
-class NoteUpdate(UpdateView):
+class NoteUpdate(LoginRequiredMixin, UpdateView):
     model = Note
     instance = Note()
     fields = ['title', 'note']
     success_url = '/notes/'
 
-class NoteDelete(DeleteView):
+class NoteDelete(LoginRequiredMixin, DeleteView):
   model = Note
   success_url = '/notes/'
 
 
-class NoteCreate(CreateView):
+class NoteCreate(LoginRequiredMixin, CreateView):
   model = Note
   fields = ['title', 'note']
   success_url = '/notes/'
