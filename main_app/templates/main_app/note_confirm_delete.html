@@ -4,23 +4,23 @@
 {% block content %}
 
 <div class="page-header">
-  <h1>Delete This Event?</h1>
+  <h1>Delete This Note?</h1>
 </div>
 <h2>Are you sure you want to delete {{ object.title }}?</h2>
 
 <form action="" method="POST" class="form">
   {% csrf_token %}
   <a 
-    href="{% url 'events_index' %}" 
-    class="btn btn-primary primary"
+    href="{% url 'notes_index' %}" 
+    class="btn secondary"
   >
     Cancel
   </a>
     <a 
-        href="{% url 'events_delete' event.id %}" 
+        href="{% url 'notes_delete' note.id %}" 
         class="btn secondary"
     >
-        <button type="submit" class="btn btn-danger danger">Yes - Delete!</button>
+        <button type="submit" class="btn danger">Yes - Delete!</button>
     </a>
 </form>
 
