@@ -16,9 +16,9 @@
 {% for event in events %}
     <div class='col-sm-6 col-lg-4 mb-3'>
         
-        <div class="card mx-auto" style="width: 220px;">
+        <div class="card mx-auto shadow-lg" style="width: 220px;">
             
-            <div class="card-header d-flex justify-content-center bg-white border-bottom-0">
+            <div class="card-header">
                 <h5 class="card-title mb-0">{{event.title}}</h5>
             </div>
 
@@ -27,7 +27,7 @@
             </div>
 
             <div class="card-footer text-muted bg-white border-top-0">
-                <p class='font-italic text-muted'>{{event.start_time}}</p>
+                <p class='font-italic text-muted text-primary'>{{event.start_time}}</p>
                 <a href="{% url 'event_edit' event.id %}" class="btn btn-primary btn-sm">Edit</a>
                 <a href="{% url 'events_delete' event.id %}" class="btn btn-link text-danger">Delete</a> 
             </div>
