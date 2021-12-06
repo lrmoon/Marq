@@ -37,20 +37,4 @@ td > textarea {
   align-self: flex-end;
   margin-right: 40px;
 }
-
-.usr-img {
-  width: 100%;
-}
-
-
-#file-input {
-  overflow: hidden;
-  position: absolute;
-  width: .1px;
-  height: .1px;
-}
-
-#file-name {
-  margin-bottom: 10px;
-}
   

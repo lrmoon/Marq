@@ -11,12 +11,6 @@ import calendar
 from .models import *
 from .utils import Calendar
 from .forms import EventForm
-import uuid
-import boto3
-
-S3_BASE_URL = 'https://s3.us-east-1.amazonaws.com/'
-BUCKET = 'newmarq'
-
 
 
 def todos_index(request):
@@ -129,6 +123,7 @@ class EventDelete(DeleteView):
 
 
 
+
 def add_photo(request, note_id):
   # photo-file will be the "name" attribute on the <input type="file">
   photo_file = request.FILES.get('photo-file', None)
@@ -182,5 +177,6 @@ class NoteCreate(CreateView):
   success_url = '/notes/'
 
   
+
 
 
