@@ -13,6 +13,7 @@
 <div class="page-header">
   {% if object %}
     <h1>Edit {{object.name}}</h1>
+    
   {% else %}
     <h1>Add An Event To the Calendar</h1>
   {% endif %}
@@ -32,7 +33,12 @@
     {% endcomment %}
     {{ form.as_table }}
   </table>
-  <button type="submit" class="btn submit">Submit!</button>
+
+  <div class="d-flex justify-content-end p-3">
+    <a href="{% url 'calendar' %}" class="btn btn-primary submit m-0"> Cancel </a>
+    <button type="submit" class="btn btn-primary submit mr-0 ml-2">Submit!</button>    
+  </div>
+    
 </form>
 
 {% endblock %}

@@ -4,7 +4,7 @@
 {% block content %}
 
 <div class="page-header">
-  <h1>Delete Event?</h1>
+  <h1>Delete This Event?</h1>
 </div>
 <h2>Are you sure you want to delete {{ object.title }}?</h2>
 
@@ -12,7 +12,7 @@
   {% csrf_token %}
   <a 
     href="{% url 'events_index' %}" 
-    class="btn secondary"
+    class="btn btn-primary primary"
   >
     Cancel
   </a>
@@ -20,7 +20,7 @@
         href="{% url 'events_delete' event.id %}" 
         class="btn secondary"
     >
-        <button type="submit" class="btn danger">Yes - Delete!</button>
+        <button type="submit" class="btn btn-danger danger">Yes - Delete!</button>
     </a>
 </form>
 
