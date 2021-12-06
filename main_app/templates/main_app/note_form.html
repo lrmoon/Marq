@@ -42,8 +42,8 @@
       >
     {% else %}
       <img 
-        src="{% static 'images/sk8r-boi-cat.svg' %}" 
-        alt="A skater boy cat"
+        src="{% static 'images/placeholder.jpeg' %}" 
+        alt="Place image here"
       >
     {% endif %}
   </div>
@@ -54,6 +54,7 @@
   <table>
     {{ form.as_table }}
   </table>
+  <a href="{% url 'notes_index' %}" class="btn btn-primary submit m-0"> Cancel </a>
   <button type="submit" class="btn submit">Submit!</button>
 </form>
 </div>

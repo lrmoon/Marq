@@ -42,8 +42,7 @@ class Event(models.Model):
 class Note(models.Model):
   title = models.CharField(max_length=100)
   note = models.TextField(max_length=500)
-  video = models.TextField(max_length=100)
-  image = models.CharField(max_length=100)
+  
 
 
 class Photo(models.Model):
