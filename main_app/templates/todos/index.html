@@ -18,7 +18,7 @@
         
         <div class="card mx-auto shadow-lg " style="width: 190px;">
             
-            <div class="card-header d-flex justify-content-between bg-white border-bottom-0">
+            <div class="card-header d-flex justify-content-between">
                 <h5 class="card-title">{{todo.title}}</h5>
                 <span style="height:20px;" class='badge border 
                     {% if todo.importance == "Important" %} 
@@ -36,10 +36,12 @@
             <div class="card-body card-body-todo">
                 <p class="card-text">{{todo.description}}</p>      
             </div>
+
             <div class="card-footer text-muted bg-white border-top-0">
                 <p class='font-italic'>Due: {{todo.date}}</p>
                 <a href="{% url 'todos_update' todo.id %}" class="stretched-link"></a>
                 <a href="{% url 'todos_delete' todo.id %}" class="btn bg-transparent btn-link text-danger"style="z-index: 20;position:relative;">Delete</a>
+
             </div>
             
         </div>

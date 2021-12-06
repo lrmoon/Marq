@@ -7,16 +7,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
 	<link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.ico' %}"/>
+
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	
-	
 	<link rel="stylesheet" type="text/css" href="{% static 'css/calendar.css' %}">
 	
 	
 	{% block head %}
 
 	{% endblock %}
+
+	<!-- Google Font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+	{% comment %}  {% endcomment %}
 	<link rel="stylesheet" href="{% static 'css/style.css' %}">
 	</head>
 
@@ -30,17 +36,20 @@
 			<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
 			<aside id="colorlib-aside" role="complementary" class="js-fullheight">
 				<nav id="colorlib-main-menu" role="navigation">
-					<h1>Marq</h1>
+					<h1 class='title'>Marq</h1>
 					<ul>
 					{% if user.is_authenticated %}
-						<li><a href="{% url 'calendar' %}">Calendar</a></li>
-						<li><a href="{% url 'todos_index' %}">To-Do's</a></li>
-						<li><a href="{% url 'events_index' %}">Events</a></li>
-						<li><a href="{% url 'notes_index' %}">Notes</a></li>
-						<li><a href="{% url 'logout' %}">Log Out</a></li>
+
+						<li class="nav-item {% if request.path == '/calendar/' %}colorlib-active{% endif %}"><a href="{% url 'calendar' %}">Calendar</a></li>
+						<li class="nav-item {% if request.path == '/todos/' %}colorlib-active{% endif %}"><a href="{% url 'todos_index' %}">To-Do's</a></li>
+						<li class="nav-item {% if request.path == '/events/' %}colorlib-active{% endif %}"><a href="{% url 'events_index' %}">Events</a></li>
+						<li class="nav-item {% if request.path == '/notes/' %}colorlib-active{% endif %}"><a href="{% url 'notes_index' %}">Notes</a></li>
+						<li class="nav-item {% if request.path == '/timers/' %}colorlib-active{% endif %}"><a href="{% url 'timers_index' %}">Timer</a></li>
+						<li ><a href="{% url 'logout' %}">Log Out</a></li>		
+
 					{% else %}
-						<li><a href="/">Login</a></li>
-						<li><a href="{% url 'signup' %}">Sign Up</a></li>
+						<li class="nav-item {% if request.path == '/' %}colorlib-active{% endif %}"><a href="/">Login</a></li>
+						<li class="nav-item {% if request.path == '/accounts/signup/' %}colorlib-active{% endif %}"><a href="{% url 'signup' %}">Sign Up</a></li>
 					{% endif %}	
 					</ul>
 

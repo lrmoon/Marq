@@ -5,7 +5,7 @@
 }
 
 .calendar tr, .calendar td {
-  border: 1px solid black;
+  border: 1px solid cornflowerblue;
 }
 
 .calendar th {
@@ -71,7 +71,12 @@ a {
 }
 
 /* Jays override */
-
+.bg-opacity-85 {
+  background-color: rgba(100, 149, 237, 0.3);
+  color: white;
+  text-shadow: 0 0 2px gray;
+  /* opacity: .85; */
+}
 
 /* styling for calendar boxes */
 td ul li  {
