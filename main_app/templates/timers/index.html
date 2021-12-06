@@ -6,10 +6,23 @@
     <a href="create" class="btn btn-primary mb-3">Add a Timer</a>
 </div>
 
+<section class='row'>
 {% for obj in object_list %}
-        <div>
-            <a href={{obj.get_absolute_url}}>{{obj.title}}</a>
+
+
+        <div class="card m-3 shadow-lg">
+            <div class="card-header">
+              Count Down
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">{{obj.title}}</h5>
+              <a href={{obj.get_absolute_url}} class='btn btn-primary'>View</a>
+              <a href="{% url 'timers_delete' obj.id %}" class="btn bg-transparent btn-link text-danger">Delete</a>
+            </div>
         </div>
-        <a href="{% url 'timers_delete' obj.id %}" class="btn bg-transparent btn-link text-danger">Delete</a>
+        
+
 {% endfor %}
+</section>
+
 {% endblock %}
