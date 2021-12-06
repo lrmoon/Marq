@@ -2,7 +2,8 @@
 {% load static %}
 
 {% block head %}
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="{% static 'css/note.css' %}">
 {% endblock %}
 
 
@@ -28,11 +29,13 @@
 
             <div class="card-footer text-muted bg-white border-top-0">
                 <p class='font-italic text-muted'>{{event.start_time}}</p>
-                <a href="{% url 'event_edit' event.id %}" class="btn btn-primary btn-sm">Edit</a>
-                <a href="{% url 'events_delete' event.id %}" class="btn btn-link text-danger">Delete</a> 
+                <a href="{% url 'event_edit' event.id %}" class="stretched-link"></a>
+                <a href="{% url 'events_delete' event.id %}" class="btn btn-link text-danger"style="z-index: 20;position:relative;">Delete</a> 
             </div>
         </div>
+        
     </div>
+
 
 {% endfor %}
 </section>

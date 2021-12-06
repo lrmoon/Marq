@@ -168,7 +168,7 @@ def notes_detail(request,note_id):
 class NoteUpdate(UpdateView):
     model = Note
     instance = Note()
-    fields = '__all__'
+    fields = ['title', 'note']
     success_url = '/notes/'
 
 class NoteDelete(DeleteView):

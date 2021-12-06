@@ -13,7 +13,7 @@
 <div class="page-header">
   {% if object %}
     <h1>Edit {{object.name}}</h1>
-    <a href="{% url 'events_delete' event.id %}" class="btn btn-link text-danger">Delete</a> 
+    
   {% else %}
     <h1>Add An Event To the Calendar</h1>
   {% endif %}
@@ -35,7 +35,7 @@
   </table>
 
   <div class="d-flex justify-content-end p-3">
-    <a href="{% url 'events_index' %}" class="btn btn-primary submit m-0"> Cancel </a>
+    <a href="{% url 'calendar' %}" class="btn btn-primary submit m-0"> Cancel </a>
     <button type="submit" class="btn btn-primary submit mr-0 ml-2">Submit!</button>    
   </div>
     
