@@ -15,17 +15,12 @@ urlpatterns = [
     path('events/create/', views.event, name='event_new'),
     path('events/<int:pk>/update/', views.EventUpdate.as_view(), name='event_edit'),
     path('events/<int:pk>/delete/', views.EventDelete.as_view(), name='events_delete'),
-
-    path('timers/', views.TimerList.as_view(), name='timers_index'),
-    path('timers/<int:pk>/', views.TimerDetail.as_view(), name='timers_detail'),
-    path('timers/create/', views.TimerCreate.as_view(), name="timers_create"),
-    path('timers/<int:pk>/delete/', views.TimerDelete.as_view(), name='timers_delete'),
+   
 
     path('notes/', views.notes_index, name='notes_index'),
     path('notes/create/', views.NoteCreate.as_view(), name="notes_create"),
     path('notes/<int:pk>/update/', views.NoteUpdate.as_view(), name='notes_update'),
     path('notes/<int:pk>/delete/', views.NoteDelete.as_view(), name='notes_delete'),
     path('notes/<int:note_id>/add_photo/', views.add_photo, name='add_photo'),
-
 ]
 
