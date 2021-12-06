@@ -8301,8 +8301,8 @@ h1, h2, h3, h4, h5,
           -webkit-transform: scaleX(1);
           -moz-transform: scaleX(1);
           -ms-transform: scaleX(1);
-          -o-transform: scaleX(1);
-          transform: scaleX(1); }
+          -o-transform: scaleX();
+          transform: scaleX(1);}
 
 #colorlib-main {
   width: 100%;
@@ -8431,6 +8431,11 @@ h1, h2, h3, h4, h5,
 
 
 /* My code below*/
+.title {
+  font-family: 'Lobster', cursive;
+}
+
+/* background */
 body::before {
   content: "";
   background-image: url("https://images.unsplash.com/photo-1527168027773-0cc890c4f42e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
@@ -8477,6 +8482,7 @@ body {
   background-color: white;
 }
 
+
 /* card effetcs */
 
 .card-body-todo {
@@ -8509,10 +8515,56 @@ body {
   color: black;
 }
 
+.errorlist {
+  color: black;
+}
+
+/* mc picker override */
+.mc-calendar--modal .mc-display,
+.mc-date--active.mc-date--picked {
+  background-color: cornflowerblue;
+}
+
+.mc-table__weekday,
+.mc-btn--success {
+  color: #6f42c1;
+}
+
+/* simple picker ovveride */
 .simplepicker-wrapper {
   z-index: 10;
 }
 
-.errorlist {
-  color: black;
+.simplepicker-day-header {
+  background-color: #0069d9;
+}
+
+.simplepicker-date-section,
+.simplepicker-btn:active, .simplepicker-btn:hover {
+  background-color: cornflowerblue;
+}
+
+.simplepicker-calender tbody .active:after, 
+.simplepicker-calender tbody td:active:after {
+  background-color: #6f42c1;
+}
+
+.simplepicker-btn {
+  border-color: #0069d9;
+  color: #0069d9;
+}
+
+/* bootstrap overrride */
+.btn-primary {
+  background-color: #6f42c1;
+  border-color: #6f42c1;
+}
+
+.btn-primary:hover {
+  background-color: #5a32a3;
+  border-color: #5a32a3;
+}
+
+.text-primary {
+  color: #5a32a3 !important;
 }

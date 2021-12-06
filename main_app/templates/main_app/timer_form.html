@@ -2,15 +2,9 @@
 {% load static %}
 
 {% block head %}
-<link 
-  href="https://cdn.jsdelivr.net/npm/mc-datepicker/dist/mc-calendar.min.css" 
-  rel="stylesheet" 
-/>
-<script 
-  src="https://cdn.jsdelivr.net/npm/mc-datepicker/dist/mc-calendar.min.js"
->
-</script>
-<script defer src="{% static 'js/todoForm.js' %}"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/simplepicker@2.0.4/dist/simplepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplepicker@2.0.4/dist/simplepicker.min.css">
+<script defer src="{% static 'js/timerForm.js' %}"></script> 
 <script defer src="{% static 'js/addAttributes.js' %}"></script>
 <link rel="stylesheet" type="text/css" href="{% static 'css/form.css' %}"/>
 {% endblock %}
@@ -19,9 +13,9 @@
 
 <div class="page-header">
   {% if object %}
-    <h1>Edit To-Do</h1>
+    <h1>Edit Timer</h1>
   {% else %}
-    <h1>Add to To-Do list</h1>
+    <h1>Add to Timer list</h1>
   {% endif %}
   
 </div>
@@ -40,7 +34,7 @@
     {{ form.as_table }}
   </table>
   <div class="d-flex justify-content-end p-3">
-    <a href="{% url 'todos_index' %}" class="btn btn-primary submit m-0"> Cancel </a>
+    <a href="{% url 'timers_index' %}" class="btn btn-primary submit m-0"> Cancel </a>
     <button type="submit" class="btn btn-primary submit mr-0 ml-2">Submit!</button>    
   </div>
 </form>

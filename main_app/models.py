@@ -1,5 +1,5 @@
 from django.db import models
-from datetime import date, datetime 
+from datetime import date, datetime
 from django.urls import reverse
 
 
@@ -39,6 +39,21 @@ class Event(models.Model):
     def get_html_url(self):
         url = reverse('event_edit', args=(self.id,))
         return f'<a href="{url}"> {self.title} </a>'
+
+
+
+# Timer model
+
+class Timer(models.Model):
+    title = models.CharField(max_length=20)
+    when = models.DateTimeField("Time Until")
+
+    def get_absolute_url(self):
+        return reverse("timers_detail", kwargs={"pk": self.pk})
+    
+
+    def __str__(self):
+      return self.title
 
 class Note(models.Model):
   title = models.CharField(max_length=100)
