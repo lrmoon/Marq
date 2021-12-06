@@ -2,8 +2,7 @@
 {% load static %}
 
 {% block head %}
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="{% static 'css/note.css' %}">
+
 {% endblock %}
 
 {% block content %}
@@ -37,13 +36,11 @@
                 <p class="card-text">{{todo.description}}</p>      
             </div>
             <div class="card-footer text-muted bg-white border-top-0">
-                <p class='font-italic'>Due: {{todo.date}}</p>
-                <a href="{% url 'todos_update' todo.id %}" class="stretched-link"></a>
-                <a href="{% url 'todos_delete' todo.id %}" class="btn bg-transparent btn-link text-danger"style="z-index: 20;position:relative;">Delete</a>
+                <p class='font-italic'>{{todo.date}}</p>
+                <a href="{% url 'todos_update' todo.id %}" class="btn btn-primary btn-sm">Edit</a>
+                <a href="{% url 'todos_delete' todo.id %}" class="btn bg-transparent btn-link text-danger">Delete</a>
             </div>
-            
         </div>
-        
     </div>
 
 {% endfor %}
