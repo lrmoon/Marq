@@ -71,7 +71,9 @@ a {
 }
 
 /* Jays override */
-
+.bg-opacity-85 {
+  opacity: .85;
+}
 
 /* styling for calendar boxes */
 td ul li  {
